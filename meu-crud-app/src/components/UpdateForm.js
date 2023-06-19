@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 
 function UpdateForm({ data }) {
-  const [formData, setFormData] = useState({
-    name: data.name,
-    email: data.email,
-  });
+  const [formData, setFormData] = useState({});
 
   const handleChange = (event) => {
     setFormData({
@@ -26,25 +23,45 @@ function UpdateForm({ data }) {
     <div>
       <h2>Update Form</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="courseName">Nome do curso:</label>
         <input
           type="text"
-          id="name"
-          name="name"
-          value={formData.name}
+          id="courseName"
+          name="courseName"
+          value={formData.courseName || ''}
           onChange={handleChange}
         />
 
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="description">Descrição:</label>
         <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
+          type="text"
+          id="description"
+          name="description"
+          value={formData.description || ''}
           onChange={handleChange}
         />
 
-        <button type="submit">Update</button>
+        <label htmlFor="duration">Duração:</label>
+        <input
+          type="text"
+          id="duration"
+          name="duration"
+          value={formData.duration || ''}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="instructor">Professor:</label>
+        <input
+          type="text"
+          id="instructor"
+          name="instructor"
+          value={formData.instructor || ''}
+          onChange={handleChange}
+        />
+
+        <button type="submit" style={{ padding: '10px 20px', background: 'green', color: 'white' }}>
+          Editar
+        </button>
       </form>
     </div>
   );

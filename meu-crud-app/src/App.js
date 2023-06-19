@@ -40,9 +40,15 @@ function App() {
 
   return (
     <div>
-      <h1>CRUD App</h1>
-      <CreateForm onSaveCourse={handleSaveCourse} editingCourse={editingCourse} courses={courses} />
-      <ReadData courses={courses} onDeleteCourse={handleDeleteCourse} onEditCourse={handleEditCourse} />
+      <h1 style={{ textAlign: 'center' }}>Cadastro de Cursos</h1>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ marginRight: '300px' }}>
+          <CreateForm onSaveCourse={handleSaveCourse} editingCourse={editingCourse} courses={courses} />
+        </div>
+        <div>
+          <ReadData courses={courses} onDeleteCourse={handleDeleteCourse} onEditCourse={handleEditCourse} />
+        </div>
+      </div>
     </div>
   );
 }

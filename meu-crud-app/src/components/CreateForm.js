@@ -21,27 +21,51 @@ function CreateForm({ onSaveCourse, editingCourse, courses }) {
   };
 
   return (
-    <div>
-      <h2>Create Course</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Course Name:
-          <input type="text" name="courseName" value={course.courseName} onChange={handleChange} />
-        </label>
-        <label>
-          Description:
-          <input type="text" name="description" value={course.description} onChange={handleChange} />
-        </label>
-        <label>
-          Duration:
-          <input type="text" name="duration" value={course.duration} onChange={handleChange} />
-        </label>
-        <label>
-          Instructor:
-          <input type="text" name="instructor" value={course.instructor} onChange={handleChange} />
-        </label>
-        <button type="submit">{editingCourse !== null ? 'Update' : 'Create'}</button>
-      </form>
+    <div style={{ textAlign: 'center' }}>
+      <h2>Adicionar curso:</h2>
+      <div style={{ display: 'inline-block', textAlign: 'left', border: '1px solid black', padding: '1em' }}>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Nome do curso:
+            <br />
+            <input type="text" name="courseName" value={course.courseName} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Descrição:
+            <br />
+            <input type="text" name="description" value={course.description} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Duração:
+            <br />
+            <input type="text" name="duration" value={course.duration} onChange={handleChange} />
+          </label>
+          <br />
+          <label>
+            Professor:
+            <br />
+            <input type="text" name="instructor" value={course.instructor} onChange={handleChange} />
+          </label>
+          <br />
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px',  }}>
+          <button
+            type="submit"
+            style={{
+              padding: '10px 20px',
+              background: 'green',
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer'
+            }}
+          >
+            {editingCourse !== null ? 'Salvar' : 'Adicionar'}
+          </button>
+        </div>
+        </form>
+      </div>
     </div>
   );
 }
