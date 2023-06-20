@@ -51,7 +51,7 @@ function ReadData({ courses, onDeleteCourse, onEditCourse }) {
           </li>
         ))}
       </ul>
-    </div>
+      </div>
   );
 }
 

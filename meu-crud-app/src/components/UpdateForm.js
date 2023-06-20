@@ -12,16 +12,12 @@ function UpdateForm({ data }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // Aqui você pode adicionar a lógica para atualizar os dados no localStorage ou enviar uma requisição para o servidor
-
-    // Atualiza os dados no localStorage
     localStorage.setItem('data', JSON.stringify(formData));
   };
 
   return (
     <div>
-      <h2>Update Form</h2>
+      <h2>updateform</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="courseName">Nome do curso:</label>
         <input
